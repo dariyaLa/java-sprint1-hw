@@ -8,7 +8,7 @@ public class Main {
         printMenu();
         int userInput = scanner.nextInt();
 
-        while (userInput != 0) {
+        while (userInput != 4) {
             // обаботка разных случаев
 
             printMenu(); // печатем меню ещё раз перед завершением предыдущего действия
