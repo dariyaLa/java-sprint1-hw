@@ -78,11 +78,10 @@ public class StepTracker {
 
     public void printMaxDaysWihtTargetSteps(int mouth) {
         int maxDaysWihtTargetSteps = 0;
-        int targetSteps = 1000;
         int[] masMaxDaysWihtTargetSteps = new int[31];
 
-        for (int i = 1; i < mouthDaysData.monthDaysSteps.length; i++) {
-            if (monthToData[mouth].getMonthDataSteps(i) >= targetSteps) {
+        for (int i = 1; i < mouthDaysData.monthDaysSteps.length; i++) { //данный цикл учитывает последний день месяца 30-е число
+            if (monthToData[mouth].getMonthDataSteps(i) >= mouthDaysData.getPurposeInDay()) {
                 maxDaysWihtTargetSteps = maxDaysWihtTargetSteps + 1;
             } else {
                 masMaxDaysWihtTargetSteps[i] = maxDaysWihtTargetSteps;

@@ -5,33 +5,37 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         StepTracker stepTracker = new StepTracker();
-        printMenu();
-        int userInput = scanner.nextInt();
+        //printMenu();
+        //int userInput = scanner.nextInt();
 
-        while (userInput != 4) {
+        while (true) {
             // обаботка разных случаев
-
             printMenu(); // печатем меню ещё раз перед завершением предыдущего действия
-            userInput = scanner.nextInt(); // повторное считывание данных от пользователя
+            int userInput = scanner.nextInt(); // повторное считывание данных от пользователя
 
             if (userInput == 1) {
                 stepTracker.saveSteps();
             }
 
-            if (userInput == 2) {
+            else if (userInput == 2) {
                 System.out.println("Введите месяц для вывода статистики шагов, где 1 - январь, 12 - декабрь:");
                 int userInputMouth = scanner.nextInt();
                 stepTracker.printStatistic(userInputMouth);
             }
 
-            if (userInput == 3) {
+            else if (userInput == 3) {
                 stepTracker.editPurposeInDay();
             }
 
-            if (userInput == 4) {
+            else if (userInput == 4) {
                 System.out.println("Программа завершена");
                 return;
             }
+            else {
+                System.out.println("Введена несуществующая команда. Повторите попытку");
+            }
+
+
         }
     }
 
