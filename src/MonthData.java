@@ -4,16 +4,16 @@ public class MonthData {
     int purposeInDay;
 
     MonthData() {
-        monthDaysSteps = new int[31];
-        purposeInDay = 10000;
+        monthDaysSteps = new int[30];
+        purposeInDay = 1000;
     }
 
     public void setDaysStaps(int day, int steps) {
-        monthDaysSteps[day] = steps;
+        monthDaysSteps[day-1] = steps;
     }
 
     public int getMonthDataSteps(int day) {
-        return monthDaysSteps[day];
+        return monthDaysSteps[day-1];
     }
 
     public void setMonthDataSteps(int[] mouthDataSteps) {
